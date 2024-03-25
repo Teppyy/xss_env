@@ -1,0 +1,15 @@
+[概要]
+ubuntu上でapache2(+php)が動いているマシン
+ローカルとフォルダを共有している
+
+[起動コマンド]
+docker build -t [image名] .
+docker run -it -d -v ${PWD}/mount/html:/var/www/html -p [ポート番号]:80 --name [コンテナ名] [image名]
+docker exec -it [コンテナ名] bash
+
+[コンソール操作]
+apachectl start(restart)
+→これでwebサーバ起動
+
+[mysql]
+ユーザ名：webserver、パスワード：webpass
